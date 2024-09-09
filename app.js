@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const tourRouter = require("./routes/tourRoutes.js");
+const tourRouter = require("./routes/tourRouter.js");
 
 
 // Middleware to parse JSON
