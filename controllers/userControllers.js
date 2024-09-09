@@ -5,17 +5,17 @@ const getAllUsers = (req, res) => {
 }
 
 const createUser = (req, res) => {
-  const { name, email, password, phone_number, gender, date_of_birth, membership_status } = req.body;
-  const newUser = User.addUser(
-    name,
-    email,
-    password,
-    phone_number,
-    gender,
-    date_of_birth,
-    membership_status
-  );
-    // const newUser = User.addUser({...req.body});
+  // const { name, email, password, phone_number, gender, date_of_birth, membership_status } = req.body;
+  // const newUser = User.addUser(
+  //   name,
+  //   email,
+  //   password,
+  //   phone_number,
+  //   gender,
+  //   date_of_birth,
+  //   membership_status
+  // );
+    const newUser = User.addUser({ ...req.body });
     if (newUser) {
         res.status(201).json(newUser);
     } else {

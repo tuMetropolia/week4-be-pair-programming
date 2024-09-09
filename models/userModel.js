@@ -5,19 +5,14 @@ const getAll = () => {
   return userArray;
 }
 
-const addUser = (name, email, password, phone_number, gender, date_of_birth, membership_status) => {
-    if (!name | !email | !password | !phone_number | !gender | !date_of_birth | !membership_status) {
+const addUser = (userData) => {
+    const {name, email, password, phone_number, gender, date_of_birth, membership_status} = userData;
+    if (!name || !email || !password || !phone_number || !gender || !date_of_birth || !membership_status) {
         return false;
     } else {
         const newUser = {
             id: nextId++,
-            name: name,
-            email: email,
-            password: password,
-            phone_number: phone_number,
-            gender: gender,
-            date_of_birth: date_of_birth,
-            membership_status: membership_status
+            ...userData,
     }
     userArray.push(newUser);
     return newUser;
